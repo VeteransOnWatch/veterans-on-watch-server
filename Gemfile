@@ -32,7 +32,14 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# devise has all kinds of auth goodness.
+# it handles our non-OAuth authentication.
+# https://github.com/plataformatec/devise
 gem 'devise'
+
+# dotenv is for handling sensitive keys outside of version control
+# https://github.com/bkeepers/dotenv
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
