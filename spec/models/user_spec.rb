@@ -3,6 +3,7 @@ require 'spec_helper'
 describe User do
 
   it { should have_db_column(:email).of_type(:string).with_options({default: "", null: false}) }
+  it { should have_db_column(:phone).of_type(:string) }
   it { should have_db_column(:encrypted_password).of_type(:string).with_options({default: "", null: false}) }
   it { should have_db_column(:reset_password_token).of_type(:string) }
   it { should have_db_column(:reset_password_sent_at).of_type(:datetime) }
