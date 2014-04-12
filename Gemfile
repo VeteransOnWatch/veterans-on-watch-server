@@ -12,9 +12,6 @@ gem 'sass-rails', '~> 4.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -32,14 +29,19 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+# devise has all kinds of auth goodness.
+# it handles our non-OAuth authentication.
+# https://github.com/plataformatec/devise
+gem 'devise'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+# dotenv is for handling sensitive keys outside of version control
+# https://github.com/bkeepers/dotenv
+gem 'dotenv-rails', :groups => [:development, :test]
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
+group :test do
+  gem 'rspec-rails', '~> 3.0.0.beta2'
+  gem 'factory_girl_rails', '~> 4.4.1'
+  gem 'shoulda-matchers', '~> 2.5.0'
+end
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+

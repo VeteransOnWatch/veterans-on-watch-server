@@ -1,4 +1,11 @@
 VeteransOnWatchServer::Application.routes.draw do
+  get "home/index"
+  devise_for :users
+
+  # This is the path that devise redirects to after login.
+  # You can override after_sign_in_path_for and after_sign_out_path_for to customize your redirect hooks.
+  root to: "home#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
